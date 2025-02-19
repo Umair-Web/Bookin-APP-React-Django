@@ -1,1 +1,7 @@
 python2 -m venv env==>it is used to create virtual enviroment
+
+venv\scripts\activate ==> to start virtual enviroment
+
+Super user is a administartor of admin panel and it has full acess to it
+
+
