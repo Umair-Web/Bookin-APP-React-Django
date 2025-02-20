@@ -2,7 +2,7 @@
 # querysets and model instances to native Python data types that can 
 # then be easily rendered into JSON, XML or other content types.
 
-#matlab jab humen apne python backend se kisi model ka data kisi dore fornt end mn kisi 
+#matlab jab humen apne python backend se kisi model ka data kisi dosre front end mn kisi 
 # kisi dosre data type mn bhejna hota like json then we use serlializers.
 
 from rest_framework import serializers
