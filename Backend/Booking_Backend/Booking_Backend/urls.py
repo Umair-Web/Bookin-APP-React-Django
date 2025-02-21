@@ -26,3 +26,7 @@ urlpatterns = [
 urlpatterns+=[
     path('api-auth',include('rest_framework.urls')),
 ]
+
+# include is used to include the urls from Room_Booking.urls
+# room_booking.urls is the file where we have defined the urls for the Room_Booking app
+# api-auth is used to provide the authentication for the API

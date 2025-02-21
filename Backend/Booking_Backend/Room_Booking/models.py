@@ -19,10 +19,24 @@ class Room(models.Model):
     maxOccupancy=models.IntegerField(default=1)
     description=models.TextField(max_length=1000)
     pricePerNight=models.IntegerField(default=150)
+   
     
     
     # It is used to the display the object in string format 
     def __str__(self):
         return f"{self.name} - {self.type} - {self.currency} - {self.maxOccupancy} - {self.description}"
+
+
+
+class RoomImage(models.Model):
+    image=models.ImageField(upload_to='room_images/')
+    caption=models.CharField(max_length=200,blank=True,null=True)
+    room=models.ForeignKey(Room,related_name="images",on_delete=models.CASCADE)
     
+    
+    def __str__(self):
+        return f"Image for {self.room.name} - {self.caption or 'No Caption'}"
+# foreign key is used to create a one-to-many relationship between the Room and RoomImage models.
+# related_name is used to access the images of a room from the Room model.
+# on_delete=models.CASCADE is used to delete the images of a room when the room is deleted.
      

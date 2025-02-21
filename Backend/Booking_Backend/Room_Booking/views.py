@@ -42,3 +42,7 @@ class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
     
 # RetrieveUpdateDestroyAPIView is a class based view which is used to display a single object of a model
 # and update and delete that object.
+
+
+
+
