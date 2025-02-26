@@ -4,8 +4,8 @@ from rest_framework import generics
 # ko aasaan aur efficient banati hain. Yeh views reusable hote hain aur kam code likhne me madad dete hain.
 
 
-from .models import Room
-from .serializers import RoomSerializer
+from .models import Room,OccupiedDate
+from .serializers import RoomSerializer,OccupiedDateSerialzer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -43,6 +43,14 @@ class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
 # RetrieveUpdateDestroyAPIView is a class based view which is used to display a single object of a model
 # and update and delete that object.
 
+class OccupiedDatesList(generics.ListCreateAPIView):
+    queryset=OccupiedDate.objects.all()
+    serializer_class=OccupiedDateSerialzer
+    
+    
+class OccupiedDatesDetails(generics.RetrieveUpdateDestroyAPIView):
+    queryset=OccupiedDate.objects.all()
+    serializer_class=OccupiedDateSerialzer 
 
 
 

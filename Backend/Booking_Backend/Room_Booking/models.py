@@ -39,4 +39,13 @@ class RoomImage(models.Model):
 # foreign key is used to create a one-to-many relationship between the Room and RoomImage models.
 # related_name is used to access the images of a room from the Room model.
 # on_delete=models.CASCADE is used to delete the images of a room when the room is deleted.
-     
+
+class OccupiedDate(models.Model):
+    room=models.ForeignKey(Room,on_delete=models.CASCADE,related_name="occupiedDates")
+    date=models.DateField()
+    
+    def __str__(self):
+        return f"{self.room.name} - {self.date}"
+    
+
+
