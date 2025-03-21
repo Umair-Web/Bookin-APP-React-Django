@@ -1,4 +1,4 @@
-# Basically serilizers are used to convert complex data types such as 
+# Basically serializers are used to convert complex data types such as 
 # querysets and model instances to native Python data types that can 
 # then be easily rendered into JSON, XML or other content types.
 
@@ -26,7 +26,7 @@ class RoomImageSeializer(serializers.ModelSerializer):
 # view_name is used to specify the name of the view.
 # queryset is used to specify the queryset for the related field.
 # fields is used to specify the fields to be serialized.
-#Meta class is used to specify the model and fields to be serialized.
+# Meta class is used to specify the model and fields to be serialized.
 
 
 
