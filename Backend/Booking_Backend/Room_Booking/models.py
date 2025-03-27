@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 # Create your models here.
 class Room(models.Model): 
     #list of tuples
@@ -42,10 +43,21 @@ class RoomImage(models.Model):
 
 class OccupiedDate(models.Model):
     room=models.ForeignKey(Room,on_delete=models.CASCADE,related_name="occupiedDates")
+
+    user=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,related_name="booked_dates")
+    # We have created our custom User in models.py and set that in settings and now from settings importing here.
     date=models.DateField()
     
     def __str__(self):
-        return f"{self.room.name} - {self.date}"
+        return f"{self.room.name} - {self.date} booked by {self.user.username}"
+    
+# Here bascially we are making our custom user on top of Abstract user provided bu django.
+
+# By default django extract user by unique username or by identifying username but here we are changing by setting unique True to email
+class User(AbstractUser):
+    email=models.EmailField(unique=True) 
+    full_name=models.CharField(max_length=100,default="")
+
     
 
 

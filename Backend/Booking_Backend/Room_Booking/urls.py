@@ -24,3 +24,4 @@ if settings.DEBUG:
     
 #Agar DEBUG=True hai (development mode me hain), to media files (/media/) serve hongi.
 #Ye static files ko local development ke dauraan serve karne me madad karta hai.
+# Basically it is used to get image offline with the help of url
